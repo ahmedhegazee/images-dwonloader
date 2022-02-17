@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Storage;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::get("/download-files", function (Request $request) {
     $data = $request->all(['start', 'end', 'extension', 'url']);
     $validator = validator()->make($data, [
